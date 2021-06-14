@@ -1,0 +1,19 @@
+
+<table *ngFor="let item of getAllProducts()">
+    <tr>
+        <td><img src="{{item.imageName}}"/>   </td>
+        <td>{{item.productName}} </td>
+        <td>{{item.productCost|currency:'INR'}} </td>
+        <td>{{item.rating}} </td>
+        <td>{{item.description|description:item.description}} </td>
+        <td>
+            <div>
+                <img *ngFor = "let n of getRating(item.rating)" src = "assets/star.png" height="10" width="10">
+            </div>
+        </td>
+        <td> <button (click)="addToCart()">Add To Cart</button> </td>
+        <td> <button (click)="doShare()">Share</button> </td>
+
+        
+    </tr>
+</table>
